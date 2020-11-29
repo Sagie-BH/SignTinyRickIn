@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "";
+}
+@model RegisterViewModel
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <a asp-action="Login"><h2 class="inactive underlineHover"> Sign In </h2> </a>
+        <h2 class="active">Sign Up</h2>
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <img src="~/Images/edit.svg" id="icon" alt="User Icon" />
+        </div>
+        <!-- Login Form -->
+        <form method="post" autocomplete="off">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input asp-for="Email" type="text" id="email" class="fadeIn second" placeholder="Email">
+            <span asp-validation-for="Email" class="text-danger"></span>
+            <label asp-for="Password"></label>
+            <input asp-for="Password" type="text" id="password" class="fadeIn third custom-password">
+            <label asp-for="ConfirmPassword"></label>
+            <input asp-for="ConfirmPassword" type="text" id="confirm" class="fadeIn third custom-password">
+            <input type="submit" class="fadeIn fourth" value="Register">
+        </form>
+    </div>
+</div>
+<partial name="_ValidationScriptsPartial" />
+<link href="~/css/LoginStyle.css" rel="stylesheet" />

@@ -1,0 +1,38 @@
+﻿@{
+    Layout = "";
+}
+@model LoginViewModel
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <h2 class="active"> Sign In </h2>
+        <a asp-action="Register"><h2 class="inactive underlineHover">Sign Up</h2></a>
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <img src="~/Images/login.svg" id="icon" alt="User Icon" />
+        </div>
+        <!-- Login Form -->
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input asp-for="Email" type="text" id="login" class="fadeIn second" placeholder="Email">
+            @*<span asp-validation-for="Email" class="text-danger"></span>*@
+            <label asp-for="Password"></label>
+            <input asp-for="Password" type="text"  id="password" class="fadeIn third custom-password">
+            @*<span asp-validation-for="Password" class="text-danger"></span>*@
+            <div class="checkbox fadeIn">
+                <label asp-for="RememberMe"></label>
+                <input asp-for="RememberMe" />
+            </div>
+            <input type="submit" class="fadeIn fourth" value="Log In">
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="underlineHover" href="#">Forgot Password?</a>
+        </div>
+
+    </div>
+</div>
+<partial name="_ValidationScriptsPartial" />
+<link href="~/css/LoginStyle.css" rel="stylesheet" />
